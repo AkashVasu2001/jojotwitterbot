@@ -36,11 +36,16 @@ def reply_to_tweets():
         print(str(mention.id) + ' - ' + mention.full_text, flush=True)
         last_seen_id = mention.id
         store_last_seen_id(last_seen_id, FILE_NAME)
-        if '#helloworld' in mention.full_text.lower():
-            print('found #helloworld!', flush=True)
+        if 'hi' in mention.full_text.lower():
+            print('found hi', flush=True)
             print('responding back...', flush=True)
             api.update_status('@' + mention.user.screen_name +
-                    'hi back to you!', mention.id)
+                    'hola amigo', mention.id)
+        if 'bye' in mention.full_text.lower():
+            print('found hi', flush=True)
+            print('responding back...', flush=True)
+            api.update_status('@' + mention.user.screen_name +
+                    'Adios', mention.id)
 
 while True:
     reply_to_tweets()
