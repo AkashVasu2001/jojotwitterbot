@@ -42,7 +42,7 @@ def reply_to_tweets():
             api.update_status('@' + mention.user.screen_name +
                     'hola amigo', mention.id)
         if 'bye' in mention.full_text.lower():
-            print('found hi', flush=True)
+            print('found bye', flush=True)
             print('responding back...', flush=True)
             api.update_status('@' + mention.user.screen_name +
                     'Adios', mention.id)
